@@ -79,14 +79,12 @@ label {
 }
 
 .progress-bar {
+  --progress: 0;
   position: fixed;
   margin-top: 50px;
-  width: 100%;
-  height: 50px;
+  width: var(--progress);
+  height: 10px;
   background: #fc9;
-  font-size: 1.5em;
-  font-style: italic;
-  text-align: center;
 }
 
 section.form, section.order-review{
