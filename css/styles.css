@@ -6,7 +6,9 @@ body {
 .inline {
   display: inline !important;
 }
-
+* {
+  box-sizing: border-box;
+}
 header {
   position: fixed;
   display: block;
@@ -15,6 +17,16 @@ header {
   min-width: 100%;
   padding: 0px 10px;
   font-size: 2em;
+}
+
+@media screen and (max-width: 750px) {
+  td label {
+    display: block !important;
+  }
+  .form {
+    box-shadow: none !important;
+    background-color: white !important;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -26,7 +38,7 @@ header {
     display: none;
   }
 
-  section.form {
+  form.form {
     padding-top: 50px;
   }
 }
@@ -49,8 +61,8 @@ header {
 }
 
 @media screen and (min-width: 451px) {
-  section.form {
-    font-size: 2em;
+  form.form {
+    font-size: 1.5em;
   }
 
   .company-name {
@@ -59,7 +71,7 @@ header {
 }
 
 @media screen and (min-width: 651px) {
-  section.form {
+  form.form {
     padding-top: 100px;
   }
 }
@@ -87,25 +99,22 @@ label {
   background: #fc9;
 }
 
-section.form, section.order-review{
+form.form, section.order-review{
   display: block;
-  max-width: 720px;
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-section.form {
-  /*font-size: 2em;*/
+form.form {
+  background-color: ghostwhite;
+  padding: 20px 6rem;
+  box-shadow: 10px 1px 50px -9px grey;
 }
 
-section.form input {
+form.form input {
   display: block;
-  font-size: 1em;
-}
-
-.cc-warning {
-  font-size: 0.5em;
-  margin-bottom: 1em;
+  font-size: 0.6em;
 }
 
 .your-order {
@@ -113,6 +122,18 @@ section.form input {
   max-width: 100%;
 }
 
+form table {
+  margin-top: 60px;
+  width: 600px;
+}
+form label {
+  display: flex;
+  justify-content: space-between;
+}
+form th {
+  padding-bottom: 25px;
+  text-align: start;
+}
 tr.headings {
   font-weight: bold;
 }
@@ -121,15 +142,45 @@ tr.total {
   font-style: italic;
 }
 
-td {
+.order-review {
+  font-size: 1.1rem;
+}
+.order-review table {
+  margin-top: 30px;
+}
+.order-review td {
   padding: 10px;
   border: 1px solid;
 }
+.order-review label {
+  justify-content: start;
+}
 
-tr:nth-child(even) {
+.order-review tr:nth-child(even) {
   background-color: #eee;
 }
 
 .check-correct {
   margin-top: 10px;
+}
+input[type=checkbox] {
+  height: 20px;
+  width: 25px;
+}
+button[type=submit] {
+  padding: 10px;
+  border: none;
+  font-size: 1.5rem;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+button[type=submit]:hover {
+  box-shadow: 0px 1px 13px 2px grey;
+  cursor: pointer;
+}
+input:focus {
+  outline: none;
+  box-shadow: 0px 1px 13px 2px grey;
 }

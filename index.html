@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,121 +9,164 @@
   <script src="js/script.js" defer></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
   <header>
     <span class="company-name">🂡 Cam's Company 🂡</span>
     <span class="company-page">Checkout Page</span>
   </header>
   <section class="progress-bar">
-    
+
   </section>
-  <section class="form">
-    <h3>Your Name and Demographic Information</h3>
-    <label>First Name
-      <input type="text">
-    </label>
-    
-    <label>Last Name
-      <input type="text">
-    </label>
-    <label>Email Address
-      <input type="text">
-    </label>
-
-    <h3>Your Shipping Address</h3>
-    
-    <label>Address Line 1
-      <input type="text">
-    </label>
-    <label>Address Line 2
-      <input type="text">
-    </label>
-    <label>City
-      <input type="text">
-    </label>
-    <label>State/Province
-      <input type="text">
-    </label>
-    <label>Postal Code
-      <input type="text">
-    </label>
-    <label>Country
-      <input type="text">
-    </label>
-
-    <h3>Your Credit Card Information</h3>
-    <div class="cc-warning"><em>Note: don't enter any actual credit card info!</em></div>
-    <label>Credit Card Number
-      <input type="text">
-    </label>
-    <label>Credit Card Type
-      <select name="cc">
-        <option>Visa</option>
-        <option>American Express</option>
-        <option>Mastercard</option>
-        <option>Discover</option>
-      </select>
-    </label>
-    <label>Expiration Date
-      <input type="text" placeholder="MM"><input type="text" placeholder="YY">
-    </label>
-    <label>CVV
-      <input type="number">
-    </label>
-
-    <h3>Your Billing Address</h3>
-   
-    <label>Address Line 1
-      <input type="text">
-    </label>
-    <label>Address Line 2
-      <input type="text">
-    </label>
-    <label>City
-      <input type="text">
-    </label>
-    <label>State/Province
-      <input type="text">
-    </label>
-    <label>Postal Code
-      <input type="text">
-    </label>
-    <label>Country
-      <input type="text">
-    </label>
-  </section>
-
-  <section class="order-review">
-    <h3>Your Order</h3>
-    <table class="your-order">
-      <tr class="headings">
-        <td>Product</td>
-        <td>Quantity</td>
-        <td>Price</td>
-        <td>Total</td>
-      </tr>
-      <tr>
-        <td>Game Console 2015</td>
-        <td>1</td>
-        <td>$500.00</td>
-        <td>$500.00</td>
-      </tr>
-      <tr>
-        <td>Platformer Bros 3D</td>
-        <td>1</td>
-        <td>$50.00</td>
-        <td>$50.00</td>
-      </tr>
-      <tr class="total">
-        <td>Total</td>
-        <td>$550.00</td>
-      </tr>
+  <form class="form">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Your Name and Demographic Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>
+              <span>First Name</span>
+              <input type="text" autofocus>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>Last Name</span>
+              <input type="text">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>Email Address</span>
+              <input type="text">
+            </label>
+          </td>
+        </tr>
+      </tbody>
     </table>
-    <label class="check-correct">Is your order correct?
-      <input type="checkbox">
-    </label>
-    <input id="submit" type="submit">
-  </section>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Your Shipping Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>
+              <span>Address</span> 
+              <input type="text" placeholder="City/ State/ Country">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>Postal Code</span> 
+              <input type="text">
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Your Credit Card Information</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>
+              <span>Credit Card Number</span>
+              <input type="text">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>Credit Card Type</span>
+              <select name="cc">
+                <option>Visa</option>
+                <option>American Express</option>
+                <option>Mastercard</option>
+                <option>Discover</option>
+              </select>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>Expiration Date</span>
+              <input type="month" value="2018-05">
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              <span>CVV</span>
+              <input type="number">
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="order-review">
+      <table class="your-order">
+        <thead>
+          <tr>
+            <th colspan="2">Your Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="headings">
+            <td>Product</td>
+            <td>Quantity</td>
+            <td>Price</td>
+            <td>Total</td>
+          </tr>
+          <tr>
+            <td>Game Console 2015</td>
+            <td>1</td>
+            <td>$500.00</td>
+            <td>$500.00</td>
+          </tr>
+          <tr>
+            <td>Platformer Bros 3D</td>
+            <td>1</td>
+            <td>$50.00</td>
+            <td>$50.00</td>
+          </tr>
+          <tr class="total">
+            <td>Total</td>
+            <td>$550.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <label class="check-correct">
+        <span>Is your order correct?</span>
+        <input type="checkbox">
+      </label>
+    </section>
+    <button type="submit">Submit</button>
+  </form>
+
+  
   <script>
     var submit = document.querySelector('#submit');
     submit.onclick = function () {
@@ -130,4 +174,5 @@
     };
   </script>
 </body>
+
 </html>
