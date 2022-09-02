@@ -18,3 +18,25 @@ const reg_postalCode = new RegExp('[0-9]{5}\-[0-9]]{4}|[0-9]{5}');
 const reg_ccNum = new RegExp('[0-9]{15,16}');
 const reg_ccType = new RegExp('(Visa)|(Mastercard)|(American Express)|(Discover)');
 const reg_cvv = new RegExp('[0-9]{3}');
+
+// VALIDATION STARTS
+
+// selecting elements
+const myForm = document.forms[0];
+const myInputs = document.getElementsByTagName('input');
+const myError = myInputs.nextElementSibling;
+
+// making array from htmlCollection myInputs
+var arr = Array.from(myInputs);
+// adding input type event listener to each input
+for (const input of arr) {
+    input.addEventListener('input', () => {
+        console.log('a');
+    });
+}
+
+
+// adding submit type event listener to the form
+myForm.addEventListener('submit', () => {
+    console.log('smth');
+});
