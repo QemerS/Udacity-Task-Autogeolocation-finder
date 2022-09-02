@@ -182,9 +182,16 @@ button[type=submit]:hover {
 }
 input:focus {
   outline: none;
-  box-shadow: 0px 1px 13px 2px grey;
 }
 
 .error {
   display: none;
+}
+
+/* validation style */
+.valid {
+  outline: 1px auto green;
+}
+.invalid {
+  outline: 1px auto red;
 }
