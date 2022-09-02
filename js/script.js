@@ -30,9 +30,7 @@ const myError = myInputs.nextElementSibling;
 var arr = Array.from(myInputs);
 // adding input type event listener to each input
 for (const input of arr) {
-    input.addEventListener('input', () => {
-        console.log('a');
-    });
+    input.addEventListener('input', showError);
 }
 
 
@@ -40,3 +38,51 @@ for (const input of arr) {
 myForm.addEventListener('submit', () => {
     console.log('smth');
 });
+
+function showError(e) {
+    // declaring special regEx for each input
+    let my_regEx;
+    switch (e.target.id) {
+        case 'f-name':
+            my_regEx = reg_name;
+            break;
+        case 'l-name':
+            my_regEx = reg_name;
+            break;
+        case 'email':
+            my_regEx = reg_email;
+            break;
+        case 'address':
+            my_regEx = reg_address;
+            break;
+        case 'p-code':
+            my_regEx = reg_postalCode;
+            break; 
+        case 'c-number':
+            my_regEx = reg_ccNum;
+            break; 
+        case 'c-type':
+            my_regEx = reg_ccType;
+            break; 
+        case 'cvv':
+            my_regEx = reg_cvv;
+            break;
+        case 'exp-date':
+            my_regEx = 'date'
+            break;
+    }
+
+    // declaring date for case my_regEx === 'date'
+    let my_now_date = new Date();
+    let my_date =`${my_now_date.getYear()+1900}-0${my_now_date.getMonth()+1}`;
+    // declaring conditions
+    const main_condition = (my_regEx === 'date')? (e.target.value > my_date): my_regEx.test(e.target.value);
+    const required_condition = (e.target.value.length === 0);
+
+    // testing conditions
+    if (main_condition && !required_condition) {
+        e.target.className = 'valid';
+    } else {
+        e.target.className = 'invalid';
+    }
+}

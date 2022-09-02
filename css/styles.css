@@ -190,8 +190,8 @@ input:focus {
 
 /* validation style */
 .valid {
-  outline: 1px auto green;
+  outline: 1px auto green !important;
 }
 .invalid {
-  outline: 1px auto red;
+  outline: 1px auto red !important;
 }
