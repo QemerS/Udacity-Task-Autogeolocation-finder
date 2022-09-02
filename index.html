@@ -18,7 +18,7 @@
   <section class="progress-bar">
 
   </section>
-  <form class="form">
+  <form class="form" novalidate>
     <table>
       <thead>
         <tr>
@@ -31,8 +31,10 @@
             <label for="f-name">
               <span>* First Name</span>
               <input type="text" autofocus required id="f-name"
-              name="f-name" size="20" pattern="/[A-Za-z]{2,}/"
-              placeholder="Your First Name" autocomplete="given-name">
+              name="f-name" size="20"
+              placeholder="Your First Name" autocomplete="given-name"
+              title="A name should start with capital letter">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -41,8 +43,9 @@
             <label for="l-name">
               <span>Last Name</span>
               <input type="text" id="l-name" name="l-name" size="20"
-              pattern="[A-Za-z]{2,}" placeholder="Your Last Name"
+              placeholder="Your Last Name"
               autocomplete="family-name">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -50,9 +53,9 @@
           <td>
             <label for="email">
               <span>* Email Address</span>
-              <input type="email" id="email" name="email" required size="20"
-              pattern="/[A-Za-z\d\-\_\,\.]{1,}(@gmail.com)/"
+              <input type="text" id="email" name="email" required size="20"
               placeholder=" * @gmail.com" autocomplete="email">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -72,8 +75,8 @@
               <span>* Address</span> 
               <input type="text" placeholder="City/ State/ Country"
               id="address" name="address" required size="20"
-              pattern="[a-zA-Z]{1,}\/[a-zA-Z]{1,}\/[a-zA-Z]{1,}"
               autocomplete="address-level1">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -81,11 +84,12 @@
           <td>
             <label for="p-code">
               <span>* Postal Code</span> 
-              <input type="text" id="p-code" pattern="/\d{5}\-\d{4}|\d{5}/" 
-              minlength="5" maxlength="10" size="20" required name="p-code"
+              <input type="text" id="p-code" name="p-code"
+              minlength="5" maxlength="10" size="20" required 
               placeholder=" * * * * * OR * * * * * - * * * *"
               autocomplete="postal-code"
               title="Whatismyzip.com is a free fast web app to define your postal code. Just allow it to use your current location info and in a few moments you'll see the zip code of the area you are in">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -104,10 +108,11 @@
             <label for="c-number">
               <span>* Credit Card Number</span>
               <input type="text" id="c-number" name="c-number" required
-              minlength="15" maxlength="16" size="20" pattern="/\d{15,16}/"
+              minlength="15" maxlength="16" size="20"
               placeholder=" * * * * * * * * * * * * * * *"
               autocomplete="cc-number"
               title="A credit card number is often the 15- or 16-digit number found on the front or back of your credit card.">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -116,8 +121,8 @@
             <label for="c-type">
               <span>* Credit Card Type</span>
               <input list="cc" id="c-type" name="c-type" required
-              type="text" size="20"
-              pattern="/(Visa)|(Mastercard)|(American Express)|(Discover)/">
+              type="text" size="20">
+              <span class="error"></span>
               <datalist id="cc">
                 <option value="Visa">
                 <option value="American Express">
@@ -133,6 +138,7 @@
               <span>* Expiration Date</span>
               <input type="month" value="2018-05" id="exp-date"
               name="exp-date" required autocomplete="cc-exp">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -141,8 +147,9 @@
             <label for="cvv">
               <span>CVV</span>
               <input type="text" id="cvv" name="cvv" maxlength="3" size="20"
-              pattern="/\d{3}/" placeholder=" * * * "
+              placeholder=" * * * "
               title="Card Verification Value (CVV) is an extra code printed on your debit or credit card.">
+              <span class="error"></span>
             </label>
           </td>
         </tr>
@@ -188,14 +195,6 @@
     </section>
     <button type="submit">Submit</button>
   </form>
-
-  
-  <script>
-    var submit = document.querySelector('#submit');
-    submit.onclick = function () {
-      alert("All of your information was valid, right? I'll just go ahead and assume that it is ;)\n\nThanks for your submission!");
-    };
-  </script>
 </body>
 
 </html>
