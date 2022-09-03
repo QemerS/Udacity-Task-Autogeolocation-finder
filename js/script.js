@@ -36,9 +36,13 @@ for (const input of arr) {
 
 // adding submit type event listener to the form
 myForm.addEventListener('submit', (e) => {
-    const agreement = document.querySelector('#agree').checked;
-    if (!agreement) {
+    const agreement = document.querySelector('#agree');
+    if (!agreement.checked) {
         e.preventDefault();
+        // adding an error message
+        const error_message = agreement.nextElementSibling;
+        error_message.textContent = 'If your order is correrct check the corrrect button';
+        error_message.style.top = '0rem';
     }
 });
 
