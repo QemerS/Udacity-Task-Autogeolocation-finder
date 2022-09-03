@@ -30,10 +30,8 @@
           <td>
             <label for="f-name">
               <span>First Name</span>
-              <input type="text" autofocus required id="f-name"
-              name="f-name" size="20"
-              placeholder="Your First Name" autocomplete="given-name"
-              title="A name should start with capital letter">
+              <input type="text" autofocus required id="f-name" name="f-name" size="20" placeholder="Your First Name"
+                autocomplete="given-name">
               <span class="error"></span>
             </label>
           </td>
@@ -42,9 +40,8 @@
           <td>
             <label for="l-name">
               <span>Last Name</span>
-              <input type="text" id="l-name" name="l-name" size="20"
-              placeholder="Your Last Name"
-              autocomplete="family-name">
+              <input type="text" id="l-name" name="l-name" size="20" placeholder="Your Last Name"
+                autocomplete="family-name">
               <span class="error"></span>
             </label>
           </td>
@@ -53,8 +50,8 @@
           <td>
             <label for="email">
               <span>Email Address</span>
-              <input type="text" id="email" name="email" required size="20"
-              placeholder=" * @gmail.com" autocomplete="email">
+              <input type="text" id="email" name="email" required size="20" placeholder=" * @gmail.com"
+                autocomplete="email">
               <span class="error"></span>
             </label>
           </td>
@@ -72,10 +69,9 @@
         <tr>
           <td>
             <label for="address">
-              <span>Address</span> 
-              <input type="text" placeholder="City/ State/ Country"
-              id="address" name="address" required size="20"
-              autocomplete="address-level1">
+              <span>Address</span>
+              <input type="text" placeholder="City/ State/ Country" id="address" name="address" required size="20"
+                autocomplete="address-level1">
               <span class="error"></span>
             </label>
           </td>
@@ -83,11 +79,9 @@
         <tr>
           <td>
             <label for="p-code">
-              <span>Postal Code</span> 
-              <input type="text" id="p-code" name="p-code"
-              minlength="5" maxlength="10" size="20" required 
-              placeholder=" * * * * * OR * * * * * - * * * *"
-              autocomplete="postal-code">
+              <span>Postal Code</span>
+              <input type="text" id="p-code" name="p-code" size="20" required
+                placeholder=" * * * * * OR * * * * * - * * * *" autocomplete="postal-code">
               <span class="error"></span>
             </label>
           </td>
@@ -106,10 +100,8 @@
           <td>
             <label for="c-number">
               <span>Credit Card Number</span>
-              <input type="text" id="c-number" name="c-number" required
-              minlength="15" maxlength="16" size="20"
-              placeholder=" * * * * * * * * * * * * * * *"
-              autocomplete="cc-number">
+              <input type="text" id="c-number" name="c-number" required size="20"
+                placeholder=" * * * * * * * * * * * * * * *" autocomplete="cc-number">
               <span class="error"></span>
             </label>
           </td>
@@ -118,15 +110,14 @@
           <td>
             <label for="c-type">
               <span>Credit Card Type</span>
-              <input list="cc" id="c-type" name="c-type" required
-              type="text" size="20">
+              <input list="cc" id="c-type" name="c-type" required type="text" size="20">
               <span class="error"></span>
               <datalist id="cc">
                 <option value="Visa">
                 <option value="American Express">
                 <option value="Mastercard">
                 <option value="Discover">
-            </datalist>
+              </datalist>
             </label>
           </td>
         </tr>
@@ -134,8 +125,7 @@
           <td>
             <label for="exp-date">
               <span>Expiration Date</span>
-              <input type="month" id="exp-date"
-              name="exp-date" required autocomplete="cc-exp">
+              <input type="month" id="exp-date" name="exp-date" required autocomplete="cc-exp">
               <span class="error"></span>
             </label>
           </td>
@@ -144,8 +134,7 @@
           <td>
             <label for="cvv">
               <span>CVV</span>
-              <input type="text" id="cvv" name="cvv" maxlength="3" size="20"
-              placeholder=" * * * ">
+              <input type="text" id="cvv" name="cvv" size="20" placeholder=" * * * ">
               <span class="error"></span>
             </label>
           </td>
@@ -194,5 +183,4 @@
     <button type="submit">Submit</button>
   </form>
 </body>
-
 </html>
