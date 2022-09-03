@@ -113,6 +113,32 @@ function showError(e) {
         e.target.nextElementSibling.textContent = '';
     } else {
         e.target.className = 'invalid';
-        e.target.nextElementSibling.textContent = 'Teleblere cavab vermir';
+        let error =  e.target.nextElementSibling;
+        switch (my_regEx) {
+            case reg_name:
+                error.textContent = 'Must start with a capital letter';
+                break;
+            case reg_email:
+                error.textContent = 'Must be a google mail';
+                break;
+            case reg_address:
+                error.textContent = 'Must contain City/Country/State';
+                break;
+            case reg_postalCode:
+                error.textContent = "Whatismyzip.com is a free fast web app to define your postal code. Just allow it to use your current location info and in a few moments you'll see the zip code of the area you are in";
+                break;
+            case reg_ccNum:
+                error.textContent = "A credit card number is often the 15- or 16-digit number found on the front or back of your credit card.";
+                break;
+            case reg_ccType:
+                error.textContent = 'We accept only one from the list';
+                break;
+            case reg_cvv:
+                error.textContent = "Card Verification Value (CVV) is an extra code printed on your debit or credit card.";
+                break;
+            case 'date':
+                error.textContent = 'Your cart has passsed exporesion date';
+                break;
+        }
     }
 }
