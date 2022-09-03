@@ -18,7 +18,12 @@ const reg_postalCode = new RegExp('[0-9]{5}\-[0-9]]{4}|[0-9]{5}');
 const reg_ccNum = new RegExp('[0-9]{15,16}');
 const reg_ccType = new RegExp('(Visa)|(Mastercard)|(American Express)|(Discover)');
 const reg_cvv = new RegExp('[0-9]{3}');
+// declaring variable for specified regEx for each input
+let my_regEx;
 
+// declaring date for case my_regEx === 'date'
+let my_now_date = new Date();
+let my_date =`${my_now_date.getYear()+1900}-0${my_now_date.getMonth()+1}`;
 // VALIDATION STARTS
 
 // selecting elements
@@ -27,7 +32,17 @@ const myInputs = document.getElementsByTagName('input');
 const myError = myInputs.nextElementSibling;
 
 // making array from htmlCollection myInputs
-var arr = Array.from(myInputs);
+const arr = Array.from(myInputs);
+
+// onload checking if required fields are empty
+window.addEventListener('load', ()=> {
+    for (const input of arr) {
+        if (input.required && input.value.length === 0) {
+            input.className = 'invalid';
+        }
+    }
+});
+
 // adding input type event listener to each input
 for (const input of arr) {
     input.addEventListener('input', showError);
@@ -43,12 +58,21 @@ myForm.addEventListener('submit', (e) => {
         const error_message = agreement.nextElementSibling;
         error_message.textContent = 'If your order is correrct check the corrrect button';
         error_message.style.top = '0rem';
+    } else {
+        for (const input of arr) {
+            // if any of inputs is invalid don't submit
+            if (input.className === 'invalid') {
+                e.preventDefault();
+                const error_message = agreement.nextElementSibling;
+                error_message.textContent = 'It seems that you have filled some blanks by invalid data';
+                error_message.style.top = '1.7rem';
+            }
+        }
     }
 });
 
 function showError(e) {
-    // declaring special regEx for each input
-    let my_regEx;
+    // switching special regEx for each input
     switch (e.target.id) {
         case 'f-name':
             my_regEx = reg_name;
@@ -78,10 +102,7 @@ function showError(e) {
             my_regEx = 'date'
             break;
     }
-
-    // declaring date for case my_regEx === 'date'
-    let my_now_date = new Date();
-    let my_date =`${my_now_date.getYear()+1900}-0${my_now_date.getMonth()+1}`;
+    
     // declaring conditions
     const main_condition = (my_regEx === 'date')? (e.target.value > my_date): my_regEx.test(e.target.value);
     const required_condition = (e.target.value.length === 0);
