@@ -82,7 +82,9 @@ function showError(e) {
     // testing conditions
     if (main_condition && !required_condition) {
         e.target.className = 'valid';
+        e.target.nextElementSibling.textContent = '';
     } else {
         e.target.className = 'invalid';
+        e.target.nextElementSibling.textContent = 'Teleblere cavab vermir';
     }
 }

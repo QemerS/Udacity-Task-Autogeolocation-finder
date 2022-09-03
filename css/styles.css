@@ -17,6 +17,8 @@ header {
   min-width: 100%;
   padding: 0px 10px;
   font-size: 2em;
+  /* fixing bug */
+  z-index: 1;
 }
 
 @media screen and (max-width: 750px) {
@@ -83,6 +85,8 @@ section {
 label {
   display: block;
   margin-bottom: 1em;
+  /* for error message */
+  position: relative;
 }
 
 .company-page {
@@ -97,6 +101,8 @@ label {
   width: var(--progress);
   height: 10px;
   background: #fc9;
+  /* fixing bug */
+  z-index: 1;
 }
 
 form.form, section.order-review{
@@ -185,7 +191,14 @@ input:focus {
 }
 
 .error {
-  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  padding: 1px;
+  font-weight: 500;
 }
 
 /* validation style */
