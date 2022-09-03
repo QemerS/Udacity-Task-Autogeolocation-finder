@@ -35,8 +35,11 @@ for (const input of arr) {
 
 
 // adding submit type event listener to the form
-myForm.addEventListener('submit', () => {
-    console.log('smth');
+myForm.addEventListener('submit', (e) => {
+    const agreement = document.querySelector('#agree').checked;
+    if (!agreement) {
+        e.preventDefault();
+    }
 });
 
 function showError(e) {
