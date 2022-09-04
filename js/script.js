@@ -142,3 +142,40 @@ function showError(e) {
         }
     }
 }
+
+// adding automatic geolacation selector to input,focus and pointover type events of address input
+document.querySelector('#address').addEventListener('input', geoFindMe);
+document.querySelector('#address').addEventListener('focus', geoFindMe);
+document.querySelector('#address').addEventListener('pointerover', geoFindMe);
+function geoFindMe(e) {
+
+    const status = e.target.nextElementSibling;
+    const mapLink = document.querySelector('#map-link');
+  
+    mapLink.href = '';
+    mapLink.textContent = '';
+  
+    function success(position) {
+      const latitude  = position.coords.latitude;
+      const longitude = position.coords.longitude;
+  
+      status.textContent = '';
+      mapLink.href = `https://maps.google.com/?q=${latitude},${longitude}`;
+      
+      mapLink.textContent = `Your location`;
+    }
+  
+    function error() {
+      status.textContent = 'Unable to retrieve your location';
+    }
+  
+    if (!navigator.geolocation) {
+      status.textContent = 'Geolocation is not supported by your browser';
+    } else {
+      status.textContent = 'Locating…';
+      navigator.geolocation.getCurrentPosition(success, error);
+    }
+  
+  }
+  
+  

@@ -88,6 +88,17 @@ label {
   /* for error message */
   position: relative;
 }
+/* maplink centering */
+label:has(a) {
+  align-items: center;
+}
+label:has(a) > input {
+  padding: 8px 2px;
+}
+#map-link {
+  font-size: 1rem;
+}
+/* code for map-link ends */
 
 .company-page {
   float: right;
